@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_1755567d24cc027ca5dffe9debe84cd5fb106978/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_bd3fa04b6abc54b24177b1371bee695f4e0ff6ae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_0b2708652bd832599d74320977285e7cf5ceda1a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_b93cc86b3f66c0d91ac88256330214b0c055afdc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_8114750006e4866da834e711875288c90022fe1f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_7464411dee357119fec836eb82b758f3d9cdf8e6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_8b1b1dd4f27c508e729f78e3a5c0512ccf10af70/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_38a9f7241af0c50623984e5ab886350b3b51e85a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_8c161ef3f31a398aea3bfddcd55268e2b7c794d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_78947a7237b7aae076c70f72ecb9ebca467b902e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e4a9eea03344756a147115864c5c13f08252cb84">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ad5e66a121542156d71357042f3d084cfdc7d128/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_3f75d23bd39a6429b954a3a2066c47b02086d992/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_f12b549aeb3a69a24e641065e28e48572019d414/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_74d2435ba24d3607558d10c23d58e88dfb182463/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.0.0_ad5fb39e7422ccfb149378d9bef2970b1a4450d1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_9947133fadff3b9537bdf7f991df037f6e0d2937/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mihai/Android/Finhacks2016/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e09c3b5ed82058d55b4a388f80ec32b9bb0735c5">
+        <dex dex="/Users/mihai/Android/Finhacks2016/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_47a390124b930d5372f69d456a179c74f578a48b/classes.dex" />
+    </item>
+
+</items>

@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.reimu.finhacks2016" >
 
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" />
     <application
+        android:name=".App"
         android:allowBackup="true"
 
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +16,7 @@
             android:permission="android.permission.INTERNET">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

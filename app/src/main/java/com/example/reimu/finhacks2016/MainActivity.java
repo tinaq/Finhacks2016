@@ -1,8 +1,16 @@
 package com.example.reimu.finhacks2016;
 
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.graphics.Color;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.Tag;
+import android.nfc.tech.Ndef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -14,28 +22,116 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.StringRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
     LinearLayout chat;
     ScrollView scroll;
     double balance=0;
     double goal =0;
     double contributed =0;
     private DatabaseReference mDatabase;
+    private NfcAdapter mAdapter;
+    private PendingIntent mPendingIntent;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mAdapter.enableForegroundDispatch(this, mPendingIntent, null, null);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mAdapter != null) {
+            mAdapter.disableForegroundDispatch(this);
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent){
+        getTagInfo(intent);
+    }
+
+    /*
+    * Function called on NFC tag read!!!!!!!!!!!!
+    * */
+    private void getTagInfo(Intent intent) {
+        Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+        Log.e(TAG, "tag : " + tag.toString());
+
+        Ndef ndef = Ndef.get(tag);
+        if (ndef == null) {
+            // NDEF is not supported by this Tag.
+            return;
+        }
+        NdefMessage ndefMessage = ndef.getCachedNdefMessage();
+
+        NdefRecord[] records = ndefMessage.getRecords();
+        for (NdefRecord ndefRecord : records) {
+            short tnf = ndefRecord.getTnf();
+            String type = new String(ndefRecord.getType());
+            if (tnf == NdefRecord.TNF_WELL_KNOWN && Arrays.equals(type.getBytes(), NdefRecord.RTD_TEXT)) {
+                textToVoiceCall("Sup%20bitch");
+                String text = new String(ndefRecord.getPayload()).substring(3);
+                Log.e(TAG, "ndefRecord string : " + text);
+                Toast.makeText(MainActivity.this, "NFC Tag Detected", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    private void textToVoiceCall(String textToVoice) {
+        String url = getResources().getString(R.string.url_text_to_voice) + textToVoice;
+        Log.e(TAG, "getToken, string URL: " + url);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        });
+
+        VolleySingleton.getInstance().getRequestQueue().add(stringRequest);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        App.getInstance().setAppContext(getApplication());
+
         setContentView(R.layout.chatlayout);
+
+        mAdapter = NfcAdapter.getDefaultAdapter(this);
+        if (mAdapter == null) {
+            //nfc not support your device.
+            return;
+        }
+        mPendingIntent = PendingIntent.getActivity(this, 0, new Intent(this,
+                getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+
         final EditText editText = (EditText)findViewById(R.id.editText);
         final RelativeLayout entireChatScreen = (RelativeLayout)findViewById(R.id.whole);
         chat = (LinearLayout) findViewById(R.id.chat);

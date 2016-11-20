@@ -1,3 +1,5 @@
 <resources>
+    <string name="url_text_to_voice">http://10.102.201.157:1880/talk?talk=</string>
+    <string name="url_set_leds">http://10.102.201.157:1880/led?led=</string>
     <string name="app_name">Finhacks2016</string>
 </resources>
