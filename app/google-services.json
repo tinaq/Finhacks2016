@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "287441026355",
+    "firebase_url": "https://thing-3d65a.firebaseio.com",
+    "project_id": "thing-3d65a",
+    "storage_bucket": "thing-3d65a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287441026355:android:418a84c577d5ebb9",
+        "android_client_info": {
+          "package_name": "com.example.reimu.finhacks2016"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287441026355-qopfs2riaahh8fljsaept2gs8ng27rqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTTebkmuaK8vvRu6YcE-AP5kPnjq37lNc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
