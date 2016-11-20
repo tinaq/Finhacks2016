@@ -3,32 +3,37 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:windowSoftInputMode="adjustResize"
+    android:fitsSystemWindows="true"
     android:id = "@+id/whole">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+    </LinearLayout>
 
-        <ScrollView
-            android:fillViewport="true"
-            android:id = "@+id/scroll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:inputType="text"
+        android:imeOptions="actionSend"/>
+    <ScrollView
+        android:fillViewport="true"
+        android:id = "@+id/scroll"
+        android:layout_above="@id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id = "@+id/chat"
             android:orientation="vertical"
+            android:weightSum="1"
             />
 
-        </ScrollView>>
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:inputType="text"
-        android:imeOptions="actionSend"/>
+    </ScrollView>
 
 </RelativeLayout>
