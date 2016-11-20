@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>The Bank</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div><img id="TDlogo" alt="TD" src="./img/TD.png"></div>
+    <div><img id="Ciscologo" alt="Cisco" src="./img/Cisco.png"></div>
+    <div class="container">
+        <div class="main" align="center">
+            <h2 id="balance"></h2>
+            <br>
+            <h2 id="goal"></h2>
+            <h2 id="contributed"></h2>
+
+            <br>
+            <form id="increase">
+                <h3>Contribution Amount</h3>
+                <input type="text" id="amount" name="amount">
+                <br>
+                <br>
+                <button id="amount_input" class="btn btn-default btn-transparent" type="submit" value="Send">Submit</button>
+            </form>
+            <br>
+            <br>
+            <br>
+            <!--
+            <form id="auto">
+                <h3>Frequency(in days)</h3>
+                <input type="text" id="frequency" name="frequency">
+
+                <h3>Contribution Amount</h3>
+                <input type="text" id="amount_auto" name="amount_auto">
+                <br>
+                <br>
+                <button class="btn btn-default btn-transparent" onclick="myFunction()" type="submit" value="Send">Submit</button>
+            </form>
+          -->
+
+            <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+            <script>
+                // Initialize Firebase
+                var config = {
+                    apiKey: "AIzaSyD2yQoxl5TxzJAQFPWxsPDvgbuTW0A3LQU",
+                    authDomain: "thing-3d65a.firebaseio.com",
+                    databaseURL: "https://thing-3d65a.firebaseio.com",
+                    storageBucket: "thing-3d65a.appspot.com",
+                    messagingSenderId: "287441026355"
+                };
+                firebase.initializeApp(config);
+
+                var balance = document.getElementById('balance');
+                var balanceRef = firebase.database().ref().child('account').child('balance');
+                balanceRef.on('value', snap => balance.innerText = "Your balance is: " + snap.val());
+
+                var goal = document.getElementById('goal');
+                var goalRef = firebase.database().ref().child('goal').child('goal');
+                goalRef.on('value', snap => goal.innerText = "Your goal is: " + snap.val());
+
+                var contributed = document.getElementById('contributed');
+                var contributedRef = firebase.database().ref().child('goal').child('contributed');
+                contributedRef.on('value', snap => contributed.innerText = "Your contribution is: " + snap.val());
+
+                // var ledRef = firebase.database().ref().child('LEDOn');
+                // ledRef.on('value', snap => ledSwitch(snap.val()));
+
+                $('#increase').submit(function() {
+                    var ref = firebase.database().ref().child('goal').child('contributed');
+                    var bref = firebase.database().ref().child('account').child('balance');
+                    bref.once('value', snap => updateBalance($('#amount').val(), snap.val()));
+                    ref.once('value', snap => writeUserData($('#amount').val(), snap.val()));
+                });
+
+                $('#auto').submit(function() {
+                    var frequency = $('#frequency').val();
+                    var amount_s = $('#amount_auto').val();
+                    // $.get({
+                    //     'url': 'http://10.102.201.157:1880/led',
+                    //     'data': {
+                    //         'led': '2!'
+                    //     }
+                    // });
+                });
+
+                function ledSwitch(status) {
+                    // alert(typeof(status));
+                    if (status) {
+                        $.get({
+                            'url': 'http://10.102.201.157:1880/led',
+                            'data': {
+                                'led': '$'
+                            }
+                        });
+                    } else {
+                        $.get({
+                            'url': 'http://10.102.201.157:1880/led',
+                            'data': {
+                                'led': '*'
+                            }
+                        });
+                    }
+                }
+
+                function writeUserData(amount, contributed) {
+                    firebase.database().ref('/goal').update({
+                        contributed: parseInt(amount) + parseInt(contributed)
+                    });
+                }
+
+                function updateBalance(amount, total_balance) {
+                    firebase.database().ref('/account').update({
+                        balance: parseInt(total_balance) - parseInt(amount)
+                    });
+                }
+
+                function myFunction() {
+                    alert('Hello');
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
