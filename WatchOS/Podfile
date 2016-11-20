@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Test12' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Test12
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+
+  target 'Test12Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Test12UITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'Test12 WatchKit App' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  # Pods for Test12 WatchKit App
+
+end
+
+target 'Test12 WatchKit Extension' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Test12 WatchKit Extension
+
+end
