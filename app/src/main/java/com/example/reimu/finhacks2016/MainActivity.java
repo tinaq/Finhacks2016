@@ -10,6 +10,8 @@ import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             short tnf = ndefRecord.getTnf();
             String type = new String(ndefRecord.getType());
             if (tnf == NdefRecord.TNF_WELL_KNOWN && Arrays.equals(type.getBytes(), NdefRecord.RTD_TEXT)) {
-                textToVoiceCall("Sup%20bitch");
+                textToVoiceCall("N F C Tag Detected");
                 String text = new String(ndefRecord.getPayload()).substring(3);
                 Log.e(TAG, "ndefRecord string : " + text);
                 Toast.makeText(MainActivity.this, "NFC Tag Detected", Toast.LENGTH_LONG).show();
@@ -100,7 +102,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void textToVoiceCall(String textToVoice) {
-        String url = getResources().getString(R.string.url_text_to_voice) + textToVoice;
+        String fixedString = null;
+        if (textToVoice.contains(" "))
+            fixedString = textToVoice.replace(" ", "%20");
+
+        String url = null;
+
+        if (fixedString != null)
+            url = getResources().getString(R.string.url_text_to_voice) + fixedString;
+        else
+            url = getResources().getString(R.string.url_text_to_voice) + textToVoice;
+
         Log.e(TAG, "getToken, string URL: " + url);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
